@@ -60,6 +60,26 @@ let split_on_inds s inds =
 
 let ind_split s = split_on_inds s (find_spaces s)
 
+(*
+http://rosettacode.org/wiki/Tokenize_a_string#OCaml
+*)
+let split_char sep str =
+  let rec indices acc i =
+    try
+      let i = succ(String.index_from str i sep) in
+      indices (i::acc) i
+    with Not_found ->
+      (String.length str + 1) :: acc
+  in
+  let is = indices [0] 0 in
+  let rec aux acc = function
+    | last::start::tl ->
+        let w = String.sub str start (last-start-1) in
+        aux (w::acc) (start::tl)
+    | _ -> acc
+  in
+  aux [] is
+
 let _ = 
     let s = "blah 123 xxx 55 99 100 hi 111 222 333 444 555 aaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbb" in
     let n = 500000 in
@@ -67,6 +87,7 @@ let _ =
     | "std" -> run_test std_split s n
     | "splitrec" -> run_test splitrec s n
     | "ind_split" -> run_test ind_split s n
+    | "split_char" -> run_test (split_char ' ') s n
     | _ -> eprintf "Please provide a valid split function name\n"
 
 

@@ -55,3 +55,13 @@ $ time ./test_batteries.byte
 ./test_batteries.byte  8.61s user 0.04s system 95% cpu 9.048 total
 `
 
+####Using split_char from [Tokenize a string](http://rosettacode.org/wiki/Tokenize_a_string#OCaml)
+`
+$ time ./test.native split_char                
+./test.native split_char  0.57s user 0.00s system 86% cpu 0.667 total
+`
+
+`
+$ time ./test.byte split_char
+./test.byte split_char  4.93s user 0.02s system 97% cpu 5.057 total
+`
