@@ -1,4 +1,4 @@
-all: test.byte test.native test_batteries.native
+all: test.byte test.native test_batteries.native test_batteries.byte
 
 test.native: test.ml
 	ocamlopt Str.cmxa -o test.native test.ml
