@@ -28,4 +28,11 @@ $ time ./test.native ind_split
 ./test.native ind_split  0.74s user 0.00s system 98% cpu 0.750 total
 `
 
+####Same thing using BatString.nsplit from Batteries
+
+`
+$ time ./test_batteries                                                                     
+./test_batteries  1.03s user 0.01s system 99% cpu 1.048 total
+`
+
 These results are consistent across both bytecode and native binaries and with strings of varying lengths.
