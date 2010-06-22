@@ -65,3 +65,6 @@ $ time ./test.native split_char
 $ time ./test.byte split_char
 ./test.byte split_char  4.93s user 0.02s system 97% cpu 5.057 total
 `
+Conclusion
+----------
+split_char is fastest with splitrec a close second.  Choices abound but everything is better than `Str.split (Str.regexp " ") s` if you just need to split on a single character.
