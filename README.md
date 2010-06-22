@@ -8,15 +8,21 @@ Results:
 -------
 
 Using the Stdlib `Str.split (Str.regexp " ") s` method
+`
 $ time ./test.native std
 ./test.native std  1.85s user 0.01s system 99% cpu 1.874 total
+`
 
 A single loop through the input string
+`
 $ time ./test.native splitrec
 ./test.native splitrec  0.72s user 0.00s system 99% cpu 0.733 total
+`
 
 Finds indexes of spaces first and then splits on those
+`
 $ time ./test.native ind_split
 ./test.native ind_split  0.74s user 0.00s system 98% cpu 0.750 total
+`
 
 These results appear consistent across both bytecode and native binaries and with strings of varying lengths.
