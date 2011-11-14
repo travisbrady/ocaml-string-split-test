@@ -3,6 +3,8 @@ let run_test s n =
         let _ = BatString.nsplit s " " in
         ()
     done
+    
+let blah = 999
 
 let _ = 
     let s = "blah 123 xxx 55 99 100 hi 111 222 333 444 555 aaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbb" in
